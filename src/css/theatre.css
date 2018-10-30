@@ -1,0 +1,160 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+body
+{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+ol,
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+table
+{
+  text-align:center;
+}
+
+input 
+{
+	height: 18px;
+}
+
+.screen
+{
+  width:100%;
+  height:20px;
+  background:#21252987;
+  color:#fff;
+  line-height:20px;
+  font-size:15px;
+}
+
+.smallBox::before
+{
+  content:"";
+  width:15px;
+  height:15px;
+  float:left;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.legendSelected::before
+{
+  content:"";
+  background:#21252987;
+}
+
+.legendEmpty::before
+{
+  content:"";
+  box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+  background-color:#eee;
+}
+
+
+.seatContainer {
+  display: block;
+  position: relative;
+  padding-right: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.seatContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;	
+  }
+
+/* On mouse-over, add a grey background color */
+.seatContainer:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.seatContainer input:checked ~ .checkmark {
+  background-color: #21252987;
+}
+
+/* When the checkbox is checked, add a blue background */
+.seatContainer input:checked ~ .nocheckmark {
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.seatContainer:hover .reserved ~ .checkmark {
+  background-color: #a6c1ee;
+  cursor: none;
+}
+
+/* On mouse-over, add a grey background color */
+.seatContainer:hover input:disabled ~ .checkmark {
+  background-color: #a6c1ee;
+  cursor: none;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.seatContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.seatContainer .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
